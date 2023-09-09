@@ -48,4 +48,6 @@
   --background-color: var(--sk-back-3);
   --chill-white: rgb(204, 204, 204);
   --serious-white: rgb(230, 230, 230);
+
+  --font-family: "Jetbrains Mono"
 }
