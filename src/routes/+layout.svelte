@@ -35,6 +35,6 @@
 	}
 
 	.main {
-		margin-top: 8%;
+		margin-top: 6rem;
 	}
 </style>
