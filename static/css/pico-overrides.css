@@ -46,4 +46,6 @@
   --sk-theme-3: hsl(204,100%,63%);
 
   --background-color: var(--sk-back-3);
+  --chill-white: rgb(204, 204, 204);
+  --serious-white: rgb(230, 230, 230);
 }

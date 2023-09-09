@@ -1,9 +1,8 @@
-
 <header>
 	<nav class="container" aria-label="breadcrumb">
 		<ul>
-			<li><a href="/accounts">accounts</a></li>
-			<li><a href="/purchases">purchases</a></li>
+			<a href="/"><img src="logo.svg" width="48px" height="48px" alt="logo"/></a>
+			<li><a href="/" class="navlink">Home</a></li>
 		</ul>
 	</nav>
 </header>
@@ -18,14 +17,24 @@
 		position: fixed;
 		top: 0;
 		width: 100%; 
+		padding-top: 5px;
+		padding-bottom: 5px;
 	}
 
-	a:hover {
+	img {
+		align-self:center;
+	}
+
+	.navlink {
+		font-size: larger;
+	}
+
+	.navlink:hover {
 		background: var(--primary-hover);
 		color: black;
 	}
 
 	.main {
-		margin-top: 6%;
+		margin-top: 8%;
 	}
 </style>

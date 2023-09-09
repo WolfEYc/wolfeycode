@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="47.048076"
-     inkscape:cx="6.6527694"
-     inkscape:cy="11.722052"
+     inkscape:zoom="8.3170034"
+     inkscape:cx="16.592515"
+     inkscape:cy="11.362265"
      inkscape:window-width="2560"
      inkscape:window-height="1368"
      inkscape:window-x="0"
@@ -34,6 +34,22 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs1">
+    <inkscape:path-effect
+       effect="mirror_symmetry"
+       start_point="2.1142835,0.03514801"
+       end_point="2.1142835,4.2684813"
+       center_point="2.1142835,2.1518147"
+       id="path-effect9"
+       is_visible="true"
+       lpeversion="1.2"
+       lpesatellites=""
+       mode="vertical"
+       discard_orig_path="false"
+       fuse_paths="false"
+       oposite_fuse="false"
+       split_items="false"
+       split_open="false"
+       link_styles="false" />
     <inkscape:path-effect
        effect="mirror_symmetry"
        start_point="1.3059554,0.61056673"
@@ -56,20 +72,33 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       sodipodi:type="star"
-       style="fill:#f9f9f9;fill-opacity:0;stroke:#f9f9f9;stroke-width:0.264583"
-       id="path4"
-       inkscape:flatsided="false"
-       sodipodi:sides="8"
-       sodipodi:cx="0.62697774"
-       sodipodi:cy="1.0819894"
-       sodipodi:r1="3.2355678"
-       sodipodi:r2="1.6177839"
-       sodipodi:arg1="0.7955248"
-       sodipodi:arg2="1.1882239"
-       inkscape:rounded="-3.469447e-18"
-       inkscape:randomized="0"
-       d="M 2.8915841,3.3929323 1.2309097,2.5828195 0.59421288,4.3173913 -0.00722503,2.5702809 -1.6839651,3.3465958 -0.87385235,1.6859213 -2.6084242,1.0492245 -0.86131376,0.44778664 -1.6376286,-1.2289535 0.02304581,-0.41884069 0.6597426,-2.1534125 1.2611805,-0.4063021 2.9379206,-1.182617 2.1278078,0.47805747 3.8623796,1.1147543 2.1152692,1.7161922 Z"
-       transform="matrix(0.5017314,0,0,0.5017314,1.8020922,1.5737986)" />
+       id="path6"
+       style="fill:#ff6600;fill-opacity:0.999785;stroke:none;stroke-width:0.60267"
+       d="M 2.1166666,0.16276102 A 2.0232271,1.9540214 0 0 0 1.8234214,0.18401068 L 1.7015901,0.51479698 A 1.7137824,1.6551614 0 0 0 1.2822635,0.67629437 L 0.95997703,0.51904691 A 2.0232271,1.9540214 0 0 0 0.54702541,0.88879093 L 0.69152302,1.2004525 A 1.7137824,1.6551614 0 0 0 0.46627671,1.679278 L 0.12344894,1.7968595 a 2.0232271,1.9540214 0 0 0 -0.0297495,0.3201614 2.0232271,1.9540214 0 0 0 0.0141664,0.1912469 l 0.330078,0.1211231 A 1.7137824,1.6551614 0 0 0 0.65044039,2.9677155 L 0.4981512,3.2807937 A 2.0232271,1.9540214 0 0 0 0.85656203,3.6399128 L 1.1703486,3.4947068 a 1.7137824,1.6551614 0 0 0 0.5319497,0.2245381 l 0.1133315,0.3286614 a 2.0232271,1.9540214 0 0 0 0.3010368,0.022666 2.0232271,1.9540214 0 0 0 0.2075383,-0.014166 L 2.441078,3.7383697 A 1.7137824,1.6551614 0 0 0 3.0091522,3.5265813 L 3.3229388,3.6795789 A 2.0232271,1.9540214 0 0 0 3.677808,3.3551675 L 3.5333103,3.0435059 A 1.7137824,1.6551614 0 0 0 3.7925561,2.4428489 L 4.1240507,2.3288092 A 2.0232271,1.9540214 0 0 0 4.1396339,2.1170209 2.0232271,1.9540214 0 0 0 4.1212175,1.8584834 L 3.7840563,1.7345271 A 1.7137824,1.6551614 0 0 0 3.530477,1.1813278 L 3.6792246,0.87604108 A 2.0232271,1.9540214 0 0 0 3.2896477,0.5254218 L 2.9609862,0.67700274 A 1.7137824,1.6551614 0 0 0 2.5041186,0.50488048 L 2.3929121,0.18117739 A 2.0232271,1.9540214 0 0 0 2.1166666,0.16276102 Z" />
+    <rect
+       style="fill:#f9f9f9;fill-opacity:0.999785;stroke:none;stroke-width:0.264583"
+       id="rect6"
+       width="2.2619815"
+       height="0.50577402"
+       x="0.98567593"
+       y="2.5353241" />
+    <path
+       style="fill:#f9f9f9;fill-opacity:0.999785;stroke:none;stroke-width:0.264583"
+       id="rect8"
+       width="0.50279498"
+       height="1.2995822"
+       x="0.98870701"
+       y="1.2234"
+       inkscape:path-effect="#path-effect9"
+       sodipodi:type="rect"
+       d="M 0.98870701,1.2234 H 1.491502 V 2.5229822 H 0.98870701 Z m 2.25115309,0 h -0.502795 v 1.2995822 h 0.502795 z"
+       transform="translate(0.00238313,-0.03514801)" />
+    <rect
+       style="fill:#f9f9f9;fill-opacity:0.999785;stroke:none;stroke-width:0.264583"
+       id="rect9"
+       width="0.43815845"
+       height="0.60674953"
+       x="1.8975874"
+       y="1.8816805" />
   </g>
 </svg>
