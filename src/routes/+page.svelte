@@ -2,7 +2,9 @@
     import Project from "./project.svelte";
 
 </script>
-
+<head>
+    <title>WolfeyCode</title>
+</head>
 <h1>Wolfey's Fullstack Apps</h1>
 <div>
     <Project title="Purchases-Tracker">
