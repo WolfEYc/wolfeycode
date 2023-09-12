@@ -47,7 +47,9 @@
 		>
 	</div>
 </div>
-<slot />
+<div class="tablecontainer">
+	<slot />
+</div>
 
 <style>
 	.sheet-selector {
@@ -62,7 +64,7 @@
 		background-color: var(--sk-back-3);
 		position: fixed;
 		width: 100%;
-		height: 9rem;
+		height: 7rem;
 	}
 	.inner-container {
 		width: var(--s-full);
@@ -75,5 +77,8 @@
 	}
 	span + span {
 		margin-left: 10px;
+	}
+	.tablecontainer {
+		padding-top: 5rem;
 	}
 </style>
