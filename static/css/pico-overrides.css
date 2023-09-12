@@ -2,50 +2,52 @@
 /* Can be forced with data-theme="light" */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-  --primary: #f4511e;
-  --primary-hover: #e64a19;
-  --primary-focus: rgba(244, 81, 30, 0.125);
-  --primary-inverse: #FFF;
+	--primary: #f4511e;
+	--primary-hover: #e64a19;
+	--primary-focus: rgba(244, 81, 30, 0.125);
+	--primary-inverse: #FFF;
 }
 
 /* Deep-orange Dark scheme (Auto) */
 /* Automatically enabled if user has Dark mode enabled */
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    --primary: #f4511e;
-    --primary-hover: #ff5722;
-    --primary-focus: rgba(244, 81, 30, 0.25);
-    --primary-inverse: #FFF;
-  }
+	:root:not([data-theme]) {
+		--primary: #f4511e;
+		--primary-hover: #ff5722;
+		--primary-focus: rgba(244, 81, 30, 0.25);
+		--primary-inverse: #FFF;
+	}
 }
 
 /* Deep-orange Dark scheme (Forced) */
 /* Enabled if forced with data-theme="dark" */
 [data-theme="dark"] {
-  --primary: var(--sk-theme-1);
-  --primary-hover: #ff5722;
-  --primary-focus: rgba(244, 81, 30, 0.25);
-  --primary-inverse: #FFF;
+	--primary: var(--sk-theme-1);
+	--primary-hover: #ff5722;
+	--primary-focus: rgba(244, 81, 30, 0.25);
+	--primary-inverse: #FFF;
 }
 
 /* Deep-orange (Common styles) */
 :root {
-  --form-element-active-border-color: var(--primary);
-  --form-element-focus-color: var(--primary-focus);
-  --switch-color: var(--primary-inverse);
-  --switch-checked-background-color: var(--primary);
-  
-  --sk-back-3: hsl(0,0%,14%);
-  --sk-back-2: hsl(0,0%,18%);
-  --sk-back-1: #1a1a1a;
-  --sk-back-4: #383838;
-  --sk-back-5: #666;
+	--form-element-active-border-color: var(--primary);
+	--form-element-focus-color: var(--primary-focus);
+	--switch-color: var(--primary-inverse);
+	--switch-checked-background-color: var(--primary);
 
-  --sk-theme-1: hsl(12,94%,62%);
-  --sk-theme-2: hsl(240,8%,44%);
-  --sk-theme-3: hsl(204,100%,63%);
+	--sk-back-3: hsl(0, 0%, 14%);
+	--sk-back-2: hsl(0, 0%, 18%);
+	--sk-back-1: #1a1a1a;
+	--sk-back-4: #383838;
+	--sk-back-5: #666;
 
-  --background-color: var(--sk-back-3);
-  --chill-white: rgb(204, 204, 204);
-  --serious-white: rgb(230, 230, 230);
+	--sk-theme-1: hsl(12, 94%, 62%);
+	--sk-theme-2: hsl(240, 8%, 44%);
+	--sk-theme-3: hsl(204, 100%, 63%);
+
+	--background-color: var(--sk-back-3);
+	--chill-white: rgb(204, 204, 204);
+	--serious-white: rgb(230, 230, 230);
+
+	--s-full: 97.2307692rem;
 }

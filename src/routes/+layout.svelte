@@ -1,28 +1,28 @@
 <header>
 	<nav class="container" aria-label="breadcrumb">
 		<ul>
-			<a href="/"><img src="logo.svg" width="48px" height="48px" alt="logo"/></a>
+			<a href="/"
+				><img src="logo.svg" width="48px" height="48px" alt="logo" /></a
+			>
 			<li><a href="/" class="navlink">Home</a></li>
 		</ul>
 	</nav>
 </header>
-<main class="container main">
+<main class="main">
 	<slot />
 </main>
 
 <style>
 	header {
-		overflow: hidden;
 		background-color: var(--sk-back-4);
 		position: fixed;
 		top: 0;
-		width: 100%; 
-		padding-top: 5px;
-		padding-bottom: 5px;
+		width: 100%;
+		height: 4rem;
 	}
 
 	img {
-		align-self:center;
+		align-self: center;
 	}
 
 	.navlink {
@@ -35,6 +35,6 @@
 	}
 
 	.main {
-		margin-top: 6rem;
+		margin-top: 4rem;
 	}
 </style>

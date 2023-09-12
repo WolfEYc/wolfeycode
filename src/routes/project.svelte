@@ -3,9 +3,14 @@
      * @type {string}
      */
     export let title;
+
+	/**
+     * @type {string}
+     */
+	 export let href;
 </script>
 
-<a href="/purchases" role="button" class="outline">
+<a href={href} role="button" class="outline">
     <hgroup>
         <h2>{title}</h2>
         <ul>
