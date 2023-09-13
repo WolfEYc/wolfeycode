@@ -118,7 +118,6 @@
 	async function replace_rows() {
 		$page.url.searchParams.set("page", "0");
 		const rows = await GetPage(fetch, $page.url);
-		console.log(rows);
 		data = { eof: rows.eof, rows: rows.purchases };
 		if (history) {
 			history.replaceState(null, "", $page.url);
