@@ -1,7 +1,7 @@
 <script>
 	import { page } from "$app/stores";
 	import { onMount } from "svelte";
-	import { GetPage } from "./endpoint";
+	import { GetPage } from "../endpoint";
 
 	/** @type {import('./$types').PageData} */
 	// @ts-ignore
@@ -109,7 +109,7 @@
 		await push_rows();
 	}
 	async function push_rows() {
-		const rows = await GetPage(fetch, $page.url.search);
+		const rows = await GetPage(fetch, $page.url);
 		data = { eof: rows.eof, rows: [...data.rows, ...rows.purchases] };
 		if (history) {
 			history.replaceState(null, "", $page.url);
@@ -117,12 +117,28 @@
 	}
 	async function replace_rows() {
 		$page.url.searchParams.set("page", "0");
-		const rows = await GetPage(fetch, $page.url.search);
+		const rows = await GetPage(fetch, $page.url);
 		console.log(rows);
 		data = { eof: rows.eof, rows: rows.purchases };
 		if (history) {
 			history.replaceState(null, "", $page.url);
 		}
+	}
+
+	/**
+	 * @param {string} pgdateTime
+	 */
+	function convertPGDateTime(pgdateTime) {
+		const date = new Date(pgdateTime);
+		return date.toLocaleString("en-us");
+	}
+
+	/**
+	 * @param {string} pgdate
+	 */
+	function convertPGDate(pgdate) {
+		const date = new Date(pgdate);
+		return date.toLocaleDateString("en-us");
 	}
 </script>
 
@@ -180,7 +196,6 @@
 			<th scope="col">
 				<div class="thdiv">
 					<input
-						style="width: 8rem;"
 						type="date"
 						bind:value={post_date_f}
 						id="post_date"
@@ -271,9 +286,11 @@
 		{#each data.rows as row}
 			<tr>
 				<td>{row.account_number}</td>
-				<td>{row.purchase_datetime}</td>
+				<td>
+					{convertPGDateTime(row.purchase_datetime)}
+				</td>
 				<td>{row.purchase_amount}</td>
-				<td>{row.post_date}</td>
+				<td>{convertPGDate(row.post_date)}</td>
 				<td>{row.purchase_number}</td>
 				<td>{row.merchant_number}</td>
 				<td>{row.merchant_name}</td>
