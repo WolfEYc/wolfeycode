@@ -9,7 +9,7 @@ const endpoint = new URL(dev + "purchase")
 // @ts-ignore
 export async function GetPage(fetch, search) {
 	endpoint.search = search
-	const res = await fetch(endpoint, { headers: { "Cache-Control": "max-age=3600" } });
+	const res = await fetch(endpoint);
 	const rows = await res.json();
 	return rows;
 }
