@@ -7,17 +7,17 @@
 <table role="grid">
 	<thead>
 		<tr>
-			<th scope="col">account_number</th>
-			<th scope="col">last_name</th>
-			<th scope="col">first_name</th>
+			<th scope="col">account</th>
+			<th scope="col">last</th>
+			<th scope="col">first</th>
 			<th scope="col">ssn</th>
 			<th scope="col">dob</th>
-			<th scope="col">mobile_number</th>
-			<th scope="col">email_address</th>
-			<th scope="col">account_state</th>
+			<th scope="col">mobile</th>
+			<th scope="col">email</th>
+			<th scope="col">state</th>
 			<th scope="col">city</th>
 			<th scope="col">zip</th>
-			<th scope="col">street_address</th>
+			<th scope="col">street</th>
 			<th scope="col">unit</th>
 		</tr>
 	</thead>
@@ -45,5 +45,14 @@
 	thead {
 		position: sticky;
 		top: 9rem;
+		background-color: var(--sk-back-3);
+		height: 2rem;
+	}
+	th:not(:first-child),
+	td:not(:first-child) {
+		border-left: 1px solid var(--sk-back-5);
+	}
+	th {
+		box-shadow: inset 0 -1px 0 var(--sk-back-5);
 	}
 </style>

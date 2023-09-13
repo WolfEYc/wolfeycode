@@ -38,8 +38,6 @@
 			class="sheet-selector"
 			class:selected={purchase_selected}>Purchases</button
 		>
-		<span />
-		<span />
 		<button
 			on:click={GotoAccounts}
 			class="sheet-selector"
@@ -54,29 +52,24 @@
 <style>
 	.sheet-selector {
 		background: transparent;
-		width: auto;
+		width: 25vw;
+		margin-left: 2px;
+		margin-right: 2px;
 	}
 	.sheet-selector.selected {
 		background: var(--primary);
 	}
-
 	.fixed-container {
 		background-color: var(--sk-back-3);
 		position: fixed;
 		width: 100%;
-		height: 7rem;
+		height: 6rem;
 	}
 	.inner-container {
-		width: var(--s-full);
-		max-width: 100%;
-		height: 100%;
 		display: flex;
-		margin: 0 auto;
-		align-items: center;
 		justify-content: center;
-	}
-	span + span {
-		margin-left: 10px;
+		align-items: center;
+		margin-top: 1%;
 	}
 	.tablecontainer {
 		padding-top: 5rem;

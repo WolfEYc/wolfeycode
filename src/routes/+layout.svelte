@@ -24,6 +24,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		padding-left: calc(100vw - 100%);
 	}
 	header {
 		background-color: var(--sk-back-4);
