@@ -1,7 +1,8 @@
 <script>
 	import { page } from "$app/stores";
 	import { onMount } from "svelte";
-	import { GetPage } from "../endpoint";
+	import { GetPage } from "../../../lib/endpoint";
+	import { convert_pg_date, convert_pg_datetime } from "$lib/time";
 
 	/** @type {import('./$types').PageData} */
 	// @ts-ignore
@@ -122,22 +123,6 @@
 		if (history) {
 			history.replaceState(null, "", $page.url);
 		}
-	}
-
-	/**
-	 * @param {string} pgdateTime
-	 */
-	function convertPGDateTime(pgdateTime) {
-		const date = new Date(pgdateTime);
-		return date.toLocaleString("en-us");
-	}
-
-	/**
-	 * @param {string} pgdate
-	 */
-	function convertPGDate(pgdate) {
-		const date = new Date(pgdate);
-		return date.toLocaleDateString("en-us");
 	}
 </script>
 
@@ -286,10 +271,10 @@
 			<tr>
 				<td>{row.account_number}</td>
 				<td>
-					{convertPGDateTime(row.purchase_datetime)}
+					{convert_pg_datetime(row.purchase_datetime)}
 				</td>
 				<td>{row.purchase_amount}</td>
-				<td>{convertPGDate(row.post_date)}</td>
+				<td>{convert_pg_date(row.post_date)}</td>
 				<td>{row.purchase_number}</td>
 				<td>{row.merchant_number}</td>
 				<td>{row.merchant_name}</td>

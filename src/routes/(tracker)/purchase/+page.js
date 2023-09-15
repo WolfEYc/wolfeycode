@@ -1,4 +1,4 @@
-import { GetPage } from '../endpoint';
+import { GetPage } from '$lib/endpoint';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, url }) {
