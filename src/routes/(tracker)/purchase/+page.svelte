@@ -2,7 +2,11 @@
 	import { page } from "$app/stores";
 	import { onMount } from "svelte";
 	import { GetPage } from "../../../lib/endpoint";
-	import { convert_pg_date, convert_pg_datetime } from "$lib/time";
+	import {
+		convert_pg_date,
+		convert_pg_datetime,
+		focus_number,
+	} from "$lib/time";
 
 	/** @type {import('./$types').PageData} */
 	// @ts-ignore
@@ -48,30 +52,26 @@
 	 * @type {number | null}
 	 */
 	let merchant_category_code_f;
+	/**
+	 * @type {boolean}
+	 */
+	let outliers_f;
 
 	onMount(() => {
-		const acc_num = $page.url.searchParams.get("account_number");
-		if (acc_num) {
-			account_f = Number(acc_num);
-		}
+		account_f = focus_number("account_number", $page);
 		purchase_date_f = $page.url.searchParams.get("purchase_date");
 		purchase_time_f = $page.url.searchParams.get("purchase_time");
-		const purchase_amount = $page.url.searchParams.get("purchase_amount");
-		if (acc_num) {
-			amount_f = Number(purchase_amount);
-		}
+		amount_f = focus_number("purchase_amount", $page);
 		post_date_f = $page.url.searchParams.get("post_date");
-		const purchase_number = $page.url.searchParams.get("purchase_number");
-		if (purchase_number) {
-			number_f = Number(purchase_number);
-		}
+		number_f = focus_number("purchase_number", $page);
 		merchant_number_f = $page.url.searchParams.get("merchant_number");
 		merchant_name_f = $page.url.searchParams.get("merchant_name");
 		merchant_state_f = $page.url.searchParams.get("merchant_state");
-		const category = $page.url.searchParams.get("merchant_category_code");
-		if (category) {
-			merchant_category_code_f = Number(category);
-		}
+		merchant_category_code_f = focus_number(
+			"merchant_category_code",
+			$page
+		);
+		outliers_f = $page.url.searchParams.has("outliers");
 	});
 
 	$: if (account_f != null) {
@@ -79,21 +79,23 @@
 			account_f.toString().replaceAll("-", "").slice(0, 5)
 		);
 	}
-	$: if (amount_f != null) {
-		amount_f = Number(amount_f.toString().slice(0, 10));
-	}
 	$: if (number_f != null) {
-		number_f = Number(number_f.toString().replaceAll("-", "").slice(0, 5));
-	}
-	$: if (merchant_state_f != null) {
-		merchant_state_f = merchant_state_f.toUpperCase();
+		account_f = Number(number_f.toString().replaceAll("-", ""));
 	}
 	$: if (merchant_category_code_f != null) {
 		merchant_category_code_f = Number(
 			merchant_category_code_f.toString().replaceAll("-", "").slice(0, 4)
 		);
 	}
-
+	// @ts-ignore
+	async function toggle_outliers() {
+		if (!outliers_f) {
+			$page.url.searchParams.set("outliers", "true");
+		} else {
+			$page.url.searchParams.delete("outliers");
+		}
+		await replace_rows();
+	}
 	// @ts-ignore
 	async function on_input(e) {
 		if (!e.target.value) {
@@ -112,17 +114,13 @@
 	async function push_rows() {
 		const rows = await GetPage(fetch, $page.url);
 		data = { eof: rows.eof, rows: [...data.rows, ...rows.purchases] };
-		if (history) {
-			history.replaceState(null, "", $page.url);
-		}
+		history.replaceState(null, "", $page.url);
 	}
 	async function replace_rows() {
 		$page.url.searchParams.set("page", "0");
 		const rows = await GetPage(fetch, $page.url);
 		data = { eof: rows.eof, rows: rows.purchases };
-		if (history) {
-			history.replaceState(null, "", $page.url);
-		}
+		history.replaceState(null, "", $page.url);
 	}
 </script>
 
@@ -164,6 +162,17 @@
 			</th>
 			<th scope="col">
 				<div class="thdiv">
+					<label for="outliers" class="flex-label">
+						<input
+							type="checkbox"
+							id="outliers"
+							name="outliers"
+							role="switch"
+							bind:checked={outliers_f}
+							on:input={toggle_outliers}
+						/>
+						outliers
+					</label>
 					<input
 						style="width: 7rem"
 						type="number"
@@ -294,7 +303,7 @@
 		flex-direction: column;
 		width: min-content;
 	}
-	input {
+	input:not([type="checkbox"]) {
 		height: 1rem;
 		border: 0;
 		padding-left: 5px;
@@ -322,5 +331,11 @@
 	}
 	input[type="number"] {
 		-moz-appearance: textfield;
+	}
+
+	.flex-label {
+		display: flex;
+		justify-content: center; /* Center horizontally */
+		align-items: center; /* Center vertically */
 	}
 </style>

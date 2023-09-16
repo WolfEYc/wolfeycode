@@ -36,13 +36,25 @@
 		<button
 			on:click={GotoPurchases}
 			class="sheet-selector"
-			class:selected={purchase_selected}>Purchases</button
+			class:selected={purchase_selected}
 		>
+			Purchases
+		</button>
 		<button
 			on:click={GotoAccounts}
 			class="sheet-selector"
-			class:selected={account_selected}>Accounts</button
+			class:selected={account_selected}
 		>
+			Accounts
+		</button>
+		<a
+			href="https://purchase.wolfeycode.com/docs#?route=get-/
+			{purchase_selected ? 'purchase' : 'account'}"
+			target="_blank"
+			rel="noreferrer noopener"
+		>
+			<button class="sheet-selector">API Docs</button>
+		</a>
 	</div>
 </div>
 <div class="tablecontainer">
