@@ -58,18 +58,19 @@
 	let unit_f;
 
 	onMount(() => {
-		account_f = focus_number("account_number", $page);
-		first_name_f = $page.url.searchParams.get("first_name");
-		last_name_f = $page.url.searchParams.get("last_name");
-		ssn_f = $page.url.searchParams.get("ssn");
-		dob_f = $page.url.searchParams.get("dob");
-		mobile_number_f = focus_number("mobile_number", $page);
-		email_address_f = $page.url.searchParams.get("email_address");
-		account_state_f = $page.url.searchParams.get("account_state");
-		city_f = $page.url.searchParams.get("city");
-		zip_f = focus_number("zip", $page);
-		street_address_f = $page.url.searchParams.get("street_address");
-		unit_f = focus_number("unit", $page);
+		const searchParams = $page.url.searchParams;
+		account_f = focus_number("account_number", searchParams);
+		first_name_f = searchParams.get("first_name");
+		last_name_f = searchParams.get("last_name");
+		ssn_f = searchParams.get("ssn");
+		dob_f = searchParams.get("dob");
+		mobile_number_f = focus_number("mobile_number", searchParams);
+		email_address_f = searchParams.get("email_address");
+		account_state_f = searchParams.get("account_state");
+		city_f = searchParams.get("city");
+		zip_f = focus_number("zip", searchParams);
+		street_address_f = searchParams.get("street_address");
+		unit_f = focus_number("unit", searchParams);
 	});
 
 	$: if (account_f != null) {

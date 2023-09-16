@@ -19,10 +19,10 @@ export function convert_pg_date(pgdate) {
 
  */
 // @ts-ignore
-export function focus_number(query_arg, page) {
-	const query_num = page.url.searchParams.get("query_arg");
+export function focus_number(query_arg, searchParams) {
+	const query_num = searchParams.get(query_arg);
 	if (query_num) {
-		return Number(query_arg);
+		return Number(query_num);
 	}
 
 	return null;

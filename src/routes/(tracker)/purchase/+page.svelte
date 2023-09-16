@@ -56,22 +56,29 @@
 	 * @type {boolean}
 	 */
 	let outliers_f;
+	/**
+	 * @type {boolean}
+	 */
+	let interstate_f;
 
 	onMount(() => {
-		account_f = focus_number("account_number", $page);
-		purchase_date_f = $page.url.searchParams.get("purchase_date");
-		purchase_time_f = $page.url.searchParams.get("purchase_time");
-		amount_f = focus_number("purchase_amount", $page);
-		post_date_f = $page.url.searchParams.get("post_date");
-		number_f = focus_number("purchase_number", $page);
-		merchant_number_f = $page.url.searchParams.get("merchant_number");
-		merchant_name_f = $page.url.searchParams.get("merchant_name");
-		merchant_state_f = $page.url.searchParams.get("merchant_state");
+		const searchParams = $page.url.searchParams;
+		account_f = focus_number("account_number", searchParams);
+		console.log(account_f);
+		purchase_date_f = searchParams.get("purchase_date");
+		purchase_time_f = searchParams.get("purchase_time");
+		amount_f = focus_number("purchase_amount", searchParams);
+		post_date_f = searchParams.get("post_date");
+		number_f = focus_number("purchase_number", searchParams);
+		merchant_number_f = searchParams.get("merchant_number");
+		merchant_name_f = searchParams.get("merchant_name");
+		merchant_state_f = searchParams.get("merchant_state");
 		merchant_category_code_f = focus_number(
 			"merchant_category_code",
-			$page
+			searchParams
 		);
-		outliers_f = $page.url.searchParams.has("outliers");
+		outliers_f = searchParams.has("outliers");
+		interstate_f = searchParams.has("interstate");
 	});
 
 	$: if (account_f != null) {
@@ -93,6 +100,14 @@
 			$page.url.searchParams.set("outliers", "true");
 		} else {
 			$page.url.searchParams.delete("outliers");
+		}
+		await replace_rows();
+	}
+	async function toggle_interstate() {
+		if (!interstate_f) {
+			$page.url.searchParams.set("interstate", "true");
+		} else {
+			$page.url.searchParams.delete("interstate");
 		}
 		await replace_rows();
 	}
@@ -245,6 +260,15 @@
 			</th>
 			<th scope="col">
 				<div class="thdiv">
+					<input
+						type="checkbox"
+						id="interstate"
+						name="interstate"
+						role="switch"
+						bind:checked={interstate_f}
+						on:input={toggle_interstate}
+					/>
+					<label for="interstate">inter</label>
 					<input
 						style="width: 2rem;"
 						maxlength="2"
