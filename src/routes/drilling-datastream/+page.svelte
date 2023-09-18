@@ -26,7 +26,7 @@
   <perspective-viewer id="Restivity" theme="Pro Dark" />
   <script type="module">
     import perspective from "https://cdn.jsdelivr.net/npm/@finos/perspective@2.5.1/dist/cdn/perspective.min.js";
-    async function DoThing() {
+    window.addEventListener("DOMContentLoaded", async function DoThing() {
       const Density_Porosity = document.getElementById("Density_Porosity");
       const Restivity = document.getElementById("Restivity");
 
@@ -78,9 +78,7 @@
         expressions: [],
         aggregates: {},
       });
-    }
-
-    DoThing();
+    });
   </script>
 </div>
 
