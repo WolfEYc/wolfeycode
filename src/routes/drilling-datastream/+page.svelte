@@ -33,7 +33,7 @@
       // Create a client that expects a Perspective server to accept
       // Websocket connections at the specified URL.
       const websocket = perspective.websocket(
-        "ws://hole-dev-stream-xomlbq5lta-uc.a.run.app/websocket"
+        "wss://hole-dev-stream-xomlbq5lta-uc.a.run.app/websocket"
       );
 
       /* This shows Perspective running in "server mode": the `table`
