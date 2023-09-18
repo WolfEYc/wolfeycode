@@ -17,7 +17,7 @@
   <link
     rel="stylesheet"
     crossorigin="anonymous"
-    href="https://cdn.jsdelivr.net/npm/@finos/perspective-viewer/dist/css/pro.css"
+    href="https://cdn.jsdelivr.net/npm/@finos/perspective-viewer/dist/css/themes.css"
   />
 </svelte:head>
 
@@ -79,6 +79,7 @@
         aggregates: {},
       });
     });
+    zzz;
   </script>
 </div>
 
