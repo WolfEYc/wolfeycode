@@ -17,7 +17,7 @@
   <link
     rel="stylesheet"
     crossorigin="anonymous"
-    href="https://cdn.jsdelivr.net/npm/@finos/perspective-viewer@2.5.1/dist/css/pro.min.css"
+    href="https://cdn.jsdelivr.net/npm/@finos/perspective-viewer/dist/css/pro.css"
   />
 </svelte:head>
 
