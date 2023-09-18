@@ -3,20 +3,16 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
   />
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@finos/perspective-viewer@2.5.1/dist/cdn/perspective-viewer.min.js"
+  ></script>
 
   <script
     type="module"
-    src="/node_modules/@finos/perspective-viewer/dist/cdn/perspective-viewer.js"
-  >
-  <script
-    type="module"
-    src="/node_modules/@finos/perspective-viewer-datagrid/dist/cdn/perspective-viewer-datagrid.js"
+    src="https://cdn.jsdelivr.net/npm/@finos/perspective-viewer-d3fc@2.5.1/dist/cdn/perspective-viewer-d3fc.min.js"
   >
   </script>
-  <script
-    type="module"
-    src="/node_modules/@finos/perspective-viewer-d3fc/dist/cdn/perspective-viewer-d3fc.js"
-  ></script>
 
   <link
     rel="stylesheet"
@@ -29,7 +25,7 @@
   <perspective-viewer id="Density_Porosity" theme="Pro Dark" />
   <perspective-viewer id="Restivity" theme="Pro Dark" />
   <script type="module">
-    import perspective from "/node_modules/@finos/perspective/dist/cdn/perspective.js";
+    import perspective from "https://cdn.jsdelivr.net/npm/@finos/perspective@2.5.1/dist/cdn/perspective.min.js";
     async function DoThing() {
       const Density_Porosity = document.getElementById("Density_Porosity");
       const Restivity = document.getElementById("Restivity");
