@@ -79,7 +79,6 @@
         aggregates: {},
       });
     });
-    zzz;
   </script>
 </div>
 
