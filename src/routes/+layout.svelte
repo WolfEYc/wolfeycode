@@ -29,7 +29,7 @@
     position: fixed;
     top: 0rem;
     width: 100%;
-    height: 6%;
+    height: 4rem;
   }
 
   img {

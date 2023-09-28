@@ -15,6 +15,7 @@
     "@finos/perspective-viewer-d3fc": "^2.5.1",
     "@finos/perspective-viewer-datagrid": "^2.5.1",
     "@finos/perspective-workspace": "^2.5.1",
+    "jose": "^4.14.6",
     "superstore-arrow": "^3.0.0"
   },
   "devDependencies": {
