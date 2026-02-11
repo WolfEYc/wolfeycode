@@ -1,31 +1,25 @@
 {
-  "name": "wolfeycode",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch"
-  },
-  "dependencies": {
-    "@finos/perspective": "^2.5.1",
-    "@finos/perspective-viewer": "^2.5.1",
-    "@finos/perspective-viewer-d3fc": "^2.5.1",
-    "@finos/perspective-viewer-datagrid": "^2.5.1",
-    "@finos/perspective-workspace": "^2.5.1",
-    "jose": "^4.14.6",
-    "superstore-arrow": "^3.0.0"
-  },
-  "devDependencies": {
-    "@finos/perspective-webpack-plugin": "^2.5.1",
-    "@sveltejs/adapter-auto": "^2.0.0",
-    "@sveltejs/kit": "^1.20.4",
-    "svelte": "^4.0.5",
-    "svelte-check": "^3.4.3",
-    "typescript": "^5.0.0",
-    "vite": "^4.4.2"
-  },
-  "type": "module"
+    "name": "wolfeycode",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "preview": "vite preview",
+        "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch"
+    },
+    "dependencies": {
+        "jose": "^4.14.6",
+        "superstore-arrow": "^3.0.0"
+    },
+    "devDependencies": {
+        "@sveltejs/adapter-auto": "^2.0.0",
+        "@sveltejs/kit": "^1.20.4",
+        "svelte": "^4.2.20",
+        "svelte-check": "^3.4.3",
+        "typescript": "^5.0.0",
+        "vite": "^4.4.2"
+    },
+    "type": "module"
 }
