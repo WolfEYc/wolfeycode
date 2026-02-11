@@ -48,7 +48,7 @@
 			Accounts
 		</button>
 		<a
-			href="https://purchase.wolfeycode.com/docs#?route=get-/
+			href="https://purchase-json-974308738028.us-central1.run.app/docs#?route=get-/
 			{purchase_selected ? 'purchase' : 'account'}"
 			target="_blank"
 			rel="noreferrer noopener"

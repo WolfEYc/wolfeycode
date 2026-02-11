@@ -2,7 +2,7 @@
 * API docs https://purchase.wolfeycode.com/docs
 */
 const dev_endpoint = "http://127.0.0.1:8080";
-const prod_endpoint = "https://purchase.wolfeycode.com";
+const prod_endpoint = "https://purchase-json-974308738028.us-central1.run.app/";
 
 const endpoint = new URL(import.meta.env.DEV ? dev_endpoint : prod_endpoint)
 
